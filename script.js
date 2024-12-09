@@ -70,4 +70,61 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Démarrer le défilement automatique au chargement de la page
     startAutoSlide();
+
+    // Validation du formulaire de contact
+    const form = document.getElementById('contactForm');
+    const errorMessage = document.getElementById('error-message');
+    const successMessage = document.getElementById('success-message');
+
+    form.addEventListener('submit', function(event) {
+        event.preventDefault(); // Empêche l'envoi du formulaire par défaut
+
+        const prenom = document.getElementById('prenom').value.trim();
+        const nom = document.getElementById('nom').value.trim();
+        const message = document.getElementById('message').value.trim();
+
+        let error = false;
+        let errorText = '';
+
+        if (!prenom) {
+            error = true;
+            errorText += 'Le prénom est requis.<br>';
+        }
+        if (!nom) {
+            error = true;
+            errorText += 'Le nom est requis.<br>';
+        }
+        if (!message) {
+            error = true;
+            errorText += 'Le message est requis.<br>';
+        }
+
+        if (error) {
+            errorMessage.innerHTML = errorText;
+        } else {
+            errorMessage.innerHTML = '';
+            sendEmail(prenom, nom, message);
+        }
+    });
+
+    function sendEmail(prenom, nom, message) {
+        const xhr = new XMLHttpRequest();
+        xhr.open('POST', 'send_email.php', true);
+        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                successMessage.innerHTML = 'Votre message a été envoyé à Arthur.jumelle@epfedu.fr';
+                successMessage.style.display = 'block';
+                form.reset();
+                setTimeout(() => {
+                    successMessage.style.opacity = '0';
+                    setTimeout(() => {
+                        successMessage.style.display = 'none';
+                        successMessage.style.opacity = '1';
+                    }, 500); // Attendre que l'animation de fade soit terminée
+                }, 1500); // 1.5 secondes
+            }
+        };
+        xhr.send(`prenom=${encodeURIComponent(prenom)}&nom=${encodeURIComponent(nom)}&message=${encodeURIComponent(message)}`);
+    }
 });

@@ -159,11 +159,13 @@
 
         <section id="contact">
             <h2>Contact</h2>
-            <form>
-                <input type="text" name="prenom" placeholder="Prénom" required>
-                <input type="text" name="nom" placeholder="Nom" required>
-                <textarea name="message" rows="5" placeholder="Message" required></textarea>
+            <form id="contactForm">
+                <input type="text" name="prenom" id="prenom" placeholder="Prénom" required>
+                <input type="text" name="nom" id="nom" placeholder="Nom" required>
+                <textarea name="message" id="message" rows="5" placeholder="Message" required></textarea>
                 <button type="submit">Envoyer</button>
+                <div id="error-message" style="color: red;"></div>
+                <div id="success-message" style="color: green; font-weight: bold; display: none; margin-top: 10px;"></div>
             </form>
         </section>
     </main>
