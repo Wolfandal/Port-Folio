@@ -124,7 +124,7 @@ section p {
 /* Carousel Styles */
 .carousel-container {
     position: relative;
-    width: 50%; /* Taille du carrousel */
+    width: 100%; /* Taille du carrousel */
     margin: 2em auto; /* Centrer le carrousel */
     overflow: hidden;
 }
@@ -308,4 +308,89 @@ footer.show {
 
 .social-icons a:hover {
     color: #ccc;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.5em;
+    }
+
+    nav a {
+        font-size: 1em;
+    }
+
+    main {
+        padding: 1em;
+    }
+
+    section h2 {
+        font-size: 1.5em;
+    }
+
+    section p {
+        font-size: 1em;
+    }
+
+    .carousel-container {
+        width: 90%;
+    }
+
+    .projets {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+
+    .projet {
+        height: 250px;
+    }
+
+    form {
+        max-width: 100%;
+    }
+
+    footer {
+        font-size: 0.8em;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.2em;
+    }
+
+    nav a {
+        font-size: 0.9em;
+    }
+
+    main {
+        padding: 0.5em;
+    }
+
+    section h2 {
+        font-size: 1.2em;
+    }
+
+    section p {
+        font-size: 0.9em;
+    }
+
+    .carousel-container {
+        width: 100%;
+    }
+
+    .projets {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+
+    .projet {
+        height: 200px;
+    }
+
+    form {
+        max-width: 100%;
+    }
+
+    footer {
+        font-size: 0.7em;
+    }
 }
