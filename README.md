@@ -2,15 +2,7 @@
 
 Bienvenue sur le dépôt GitHub du portfolio interactif et responsive d'Arthur Jumelle. Ce projet présente les compétences et les projets d'Arthur dans le domaine du développement commercial et de l'industrie du gaming.
 
-## Table des matières
 
-- [Aperçu](#aperçu)
-- [Fonctionnalités](#fonctionnalités)
-- [Installation](#installation)
-- [Utilisation](#utilisation)
-- [Technologies utilisées](#technologies-utilisées)
-- [Contribuer](#contribuer)
-- [Licence](#licence)
 
 ## Aperçu
 
