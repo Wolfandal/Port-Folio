@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio interactif et responsive pour un commercial">
+    <title>Portfolio - Arthur Jumelle</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        header {
+            background-color: #121212;
+            color: rgb(81, 133, 230);
+            padding: 1em;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0.5em 0;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 1.5em;
+        }
+
+        nav a {
+            color: rgb(81, 133, 230);
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .photo-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 2em 0;
+        }
+
+        .photo-container img {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border: 5px solid #333;
+        }
+
+        main {
+            padding: 1em;
+        }
+
+        section {
+            margin: 2em 0;
+        }
+
+        section h2 {
+            text-align: center;
+            margin-bottom: 1em;
+        }
+
+        /* Grille de projets */
+        .projets {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1em;
+            perspective: 1000px; /* Ajoute de la profondeur pour l'effet 3D */
+        }
+
+        /* Style de chaque projet */
+        .projet {
+            background-color: transparent;
+            padding: 0;
+            border: none;
+            position: relative;
+            height: 200px;
+        }
+
+        /* Structure interne pour l'effet de flip */
+        .projet .inner {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            transform-style: preserve-3d;
+            transition: transform 0.6s;
+        }
+
+        .projet:hover .inner {
+            transform: rotateY(180deg); /* Rotation 3D au survol */
+        }
+
+        /* Avant du projet */
+        .projet .front, .projet .back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 8px;
+            padding: 1em;
+            box-sizing: border-box;
+        }
+
+        /* Face avant */
+        .projet .front {
+            background-color: #7f94c5;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Face arrière */
+        .projet .back {
+            background-color: #138563;
+            color: white;
+            transform: rotateY(180deg);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 1em;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        form input, form textarea, form button {
+            padding: 0.5em;
+            font-size: 1em;
+        }
+
+        form button {
+            background-color: #333;
+            color: rgb(11, 89, 163);
+            border: none;
+            cursor: pointer;
+        }
+
+        form button:hover {
+            background-color: #555;
+        }
+
+        footer {
+            background-color: #333;
+            color: rgb(96, 20, 202);
+            text-align: center;
+            padding: 1em 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 1.3em;
+        }
+
+        .social-icons a {
+            color: white;
+            font-size: 1.8em;
+        }
+
+        .social-icons a:hover {
+            color: #ccc;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Portfolio d'Arthur Jumelle</h1>
+        <nav>
+            <a href="#edito">Édito</a>
+            <a href="#projets">Projets</a>
+            <a href="#contact">Contact</a>
+        </nav>
+        <div class="photo-container">
+            <img src="Photo/PP.jpg" alt="Photo de profil">
+        </div>
+    </header>
+
+    <main>
+        <section id="edito">
+            <h2>Édito</h2>
+            <p>Bienvenue dans mon portfolio. Découvrez mes projets et contactez-moi pour toute opportunité professionnelle !</p>
+        </section>
+
+        <section id="projets">
+            <h2>Projets</h2>
+            <div class="projets">
+                <!-- Projet 1 -->
+                <div class="projet">
+                    <a href="projet1.html">
+                        <div class="inner">
+                            <div class="front">
+                                <h3>Projet 1</h3>
+                                <p>Description rapide du projet.</p>
+                            </div>
+                            <div class="back">
+                                <h3>Détails</h3>
+                                <p>Informations détaillées sur le projet.</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            
+                <!-- Projet 2 -->
+                <div class="projet">
+                    <a href="projet2.html">
+                        <div class="inner">
+                            <div class="front">
+                                <h3>Projet 2</h3>
+                                <p>Description rapide du projet.</p>
+                            </div>
+                            <div class="back">
+                                <h3>Détails</h3>
+                                <p>Informations détaillées sur le projet.</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            
+                <!-- Projet 3 -->
+                <div class="projet">
+                    <a href="projet3.html">
+                        <div class="inner">
+                            <div class="front">
+                                <h3>Projet 3</h3>
+                                <p>Description rapide du projet.</p>
+                            </div>
+                            <div class="back">
+                                <h3>Détails</h3>
+                                <p>Informations détaillées sur le projet.</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            
+                <!-- Projet 4 -->
+                <div class="projet">
+                    <a href="projet4.html">
+                        <div class="inner">
+                            <div class="front">
+                                <h3>Projet 4</h3>
+                                <p>Description rapide du projet.</p>
+                            </div>
+                            <div class="back">
+                                <h3>Détails</h3>
+                                <p>Informations détaillées sur le projet.</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            
+                <!-- Projet 5 -->
+                <div class="projet">
+                    <a href="projet5.html">
+                        <div class="inner">
+                            <div class="front">
+                                <h3>Projet 5</h3>
+                                <p>Description rapide du projet.</p>
+                            </div>
+                            <div class="back">
+                                <h3>Détails</h3>
+                                <p>Informations détaillées sur le projet.</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            
+                <!-- Projet 6 -->
+                <div class="projet">
+                    <a href="projet6.html">
+                        <div class="inner">
+                            <div class="front">
+                                <h3>Projet 6</h3>
+                                <p>Description rapide du projet.</p>
+                            </div>
+                            <div class="back">
+                                <h3>Détails</h3>
+                                <p>Informations détaillées sur le projet.</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            
+
+            <section id="contact">
+                <h2>Contact</h2>
+                <form>
+                    <input type="text" name="prenom" placeholder="Prénom" required>
+                    <input type="text" name="nom" placeholder="Nom" required>
+                    <textarea name="message" rows="5" placeholder="Message" required></textarea>
+                    
+                    <!-- Bouton Envoyer sous les champs -->
+                    <button type="submit">Envoyer</button>
+                </form>
+            </section>
+            
+    </main>
+
+    <footer id="footer">
+        <div class="social-icons">
+            <a href="https://www.facebook.com/profile.php?id=100009827946395" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://x.com/Wolfandal" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.linkedin.com/in/arthur-jumelle-057665223/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+        <p>&copy; 2024 Arthur Jumelle. Tous droits réservés.</p>
+    </footer>
+    
+    <script src="script.js"></script>
+</body>
+</html>
