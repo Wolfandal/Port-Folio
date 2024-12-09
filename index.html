@@ -160,9 +160,18 @@
         <section id="contact">
             <h2>Contact</h2>
             <form id="contactForm">
-                <input type="text" name="prenom" id="prenom" placeholder="Prénom" required>
-                <input type="text" name="nom" id="nom" placeholder="Nom" required>
-                <textarea name="message" id="message" rows="5" placeholder="Message" required></textarea>
+                <div>
+                    <label for="prenom">Prénom</label>
+                    <input type="text" name="prenom" id="prenom" placeholder="Prénom" required>
+                </div>
+                <div>
+                    <label for="nom">Nom</label>
+                    <input type="text" name="nom" id="nom" placeholder="Nom" required>
+                </div>
+                <div>
+                    <label for="message">Message</label>
+                    <textarea name="message" id="message" rows="5" placeholder="Message" required></textarea>
+                </div>
                 <button type="submit">Envoyer</button>
                 <div id="error-message" style="color: red;"></div>
                 <div id="success-message" style="color: green; font-weight: bold; display: none; margin-top: 10px;"></div>

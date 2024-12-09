@@ -253,6 +253,16 @@ form {
     margin: 0 auto;
 }
 
+form div {
+    display: flex;
+    flex-direction: column;
+}
+
+form label {
+    margin-bottom: 0.5em;
+    font-weight: bold;
+}
+
 form input, form textarea, form button {
     padding: 0.5em;
     font-size: 1em;
@@ -280,7 +290,7 @@ form button:hover {
 /* Footer Styles */
 footer {
     background-color: #333;
-    color: rgb(96, 20, 202);
+    color: white;
     text-align: center;
     padding: 1em 0;
     position: fixed;
