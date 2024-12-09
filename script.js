@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let currentIndex = 0;
     const totalItems = carousel.children.length;
     let isTransitioning = false;
+    let autoSlideInterval;
 
     function updateCarousel() {
         if (isTransitioning) return;
@@ -19,28 +20,37 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function onTransitionEnd() {
-        if (currentIndex === 0) {
-            carousel.style.transition = 'none';
-            carousel.style.transform = `translateX(${-totalItems * 100}%)`;
-        } else if (currentIndex === totalItems) {
-            carousel.style.transition = 'none';
-            carousel.style.transform = `translateX(0%)`;
-        }
-
-        currentIndex = (currentIndex + totalItems) % totalItems;
         isTransitioning = false;
         carousel.removeEventListener('transitionend', onTransitionEnd);
     }
 
+    function startAutoSlide() {
+        autoSlideInterval = setInterval(() => {
+            currentIndex = (currentIndex + 1) % totalItems;
+            updateCarousel();
+        }, 1800); // 1.8 secondes
+    }
+
+    function stopAutoSlide() {
+        clearInterval(autoSlideInterval);
+    }
+
     nextButton.addEventListener('click', () => {
+        stopAutoSlide();
         currentIndex = (currentIndex + 1) % totalItems;
         updateCarousel();
+        startAutoSlide();
     });
 
     prevButton.addEventListener('click', () => {
+        stopAutoSlide();
         currentIndex = (currentIndex - 1 + totalItems) % totalItems;
         updateCarousel();
+        startAutoSlide();
     });
+
+    carousel.addEventListener('mouseenter', stopAutoSlide);
+    carousel.addEventListener('mouseleave', startAutoSlide);
 
     // Détection du scroll
     let lastScrollTop = 0; // Dernière position du scroll
@@ -57,4 +67,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         lastScrollTop = window.scrollY; // On garde en mémoire la position actuelle du scroll
     });
+
+    // Démarrer le défilement automatique au chargement de la page
+    startAutoSlide();
 });
