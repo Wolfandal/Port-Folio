@@ -1,0 +1,267 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    background-color: #121212;
+    color: rgb(81, 133, 230);
+    padding: 1em;
+    text-align: center;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.profile-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-bottom: 1em;
+}
+
+.profile-picture {
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid white;
+    width: 100px;
+    height: 100px;
+    position: relative;
+    z-index: 1;
+}
+
+.profile-picture img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profile-hover-text {
+    position: absolute;
+    right: -200px; /* Ajustez cette valeur selon vos besoins */
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    white-space: nowrap;
+    z-index: 0;
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.profile-container:hover .profile-hover-text {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.header-content {
+    text-align: center;
+}
+
+header h1 {
+    margin: 0.5em 0;
+    font-size: 2em;
+    color: rgb(81, 133, 230);
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 1.5em;
+    margin-top: 1em;
+}
+
+nav a {
+    color: rgb(81, 133, 230);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+main {
+    padding: 2em;
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+section {
+    margin: 2em 0;
+    text-align: center;
+}
+
+section h2 {
+    margin-bottom: 1em;
+    color: #333;
+    font-size: 1.8em;
+}
+
+section p {
+    margin: 1em 0;
+    font-size: 1.2em;
+    line-height: 1.6;
+}
+
+section ul {
+    list-style-type: disc;
+    margin-left: 2em;
+    padding: 0 1em;
+    background-color: #f9f9f9;
+    border-left: 4px solid #333;
+    border-radius: 4px;
+}
+
+section ul li {
+    margin: 0.5em 0;
+    font-size: 1.1em;
+}
+
+.project-image {
+    text-align: center;
+    margin-top: 2em;
+}
+
+.project-image img {
+    max-width: 80%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.return-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #121212;
+    color: rgb(81, 133, 230);
+    padding: 15px 30px;
+    font-size: 1.8em; /* 150% de la taille actuelle */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.return-button:hover {
+    transform: scale(1.1);
+    background-color: rgb(81, 133, 230);
+    color: white;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1em 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    transition: transform 0.3s ease-in-out;
+    transform: translateY(100%); /* Cache le footer en bas */
+    font-size: 0.9em; /* Footer plus petit */
+}
+
+footer.show {
+    transform: translateY(0); /* Affiche le footer quand la page est en haut */
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 1.3em;
+}
+
+.social-icons a {
+    color: white;
+    font-size: 1.8em;
+}
+
+.social-icons a:hover {
+    color: #ccc;
+}
+
+.projets {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1em;
+    perspective: 1000px; /* Ajoute de la profondeur pour l'effet 3D */
+}
+
+.projet {
+    background-color: transparent;
+    padding: 0;
+    border: none;
+    position: relative;
+    height: 300px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.6s;
+}
+
+.projet .inner {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+}
+
+.projet:hover .inner {
+    transform: rotateY(180deg); /* Rotation 3D au survol */
+}
+
+.projet .front, .projet .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 8px;
+    padding: 1em;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.projet .front {
+    background-size: cover;
+    background-position: center;
+    color: white;
+    font-size: 1.5em;
+}
+
+.projet .back {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    transform: rotateY(180deg);
+    font-size: 1.2em;
+}
+
+.projet .front h3, .projet .back h3 {
+    margin: 0.5em 0;
+    font-size: 1.8em;
+}
+
+.projet .front p, .projet .back p {
+    margin: 0.5em 0;
+    font-size: 1.2em;
+}

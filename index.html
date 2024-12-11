@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio interactif et responsive pour un commercial">
+    <title>Portfolio - Arthur Jumelle</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="profile-container">
+            <div class="profile-picture">
+                <img src="Photo/PP.jpg" alt="Photo de profil">
+            </div>
+            <div class="profile-hover-text">
+                <p>Jumelle Arthur</p>
+                <p>Arthur.jumelle@epfedu.fr</p>
+            </div>
+        </div>
+        <div class="header-content">
+            <h1>Portfolio d'Arthur Jumelle</h1>
+            <nav>
+                <a href="#edito">Édito</a>
+                <a href="#projets">Projets</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="edito">
+            <h2>Édito</h2>
+            <p>Bienvenue dans mon portfolio ! Je suis passionné par le développement commercial et l'industrie du gaming. Ici, découvrez mes projets et collaborations inspirés de l'univers de Riot Games, connu pour ses succès mondiaux tels que League of Legends (LoL), Teamfight Tactics (TFT), et Valorant. Ces jeux révolutionnent non seulement le divertissement, mais aussi l'e-sport à l'échelle internationale. Contactez-moi pour toute opportunité professionnelle dans ce domaine palpitant !</p>
+            <div class="carousel-container">
+                <div class="carousel">
+                    <div class="carousel-item">
+                        <img src="Photo/aceuil Riot.png" alt="Image 1">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="Photo/LOL.png" alt="Image 2">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="Photo/TFT.png" alt="Image 3">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="Photo/Valo.png" alt="Image 4">
+                    </div>
+                </div>
+                <div class="carousel-controls">
+                    <button id="prev">&#10094;</button>
+                    <button id="next">&#10095;</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="projets">
+            <h2>Projets</h2>
+            <div class="projets">
+                <!-- Projet 1 -->
+                <div class="projet">
+                    <a href="projet1.html">
+                        <div class="inner">
+                            <div class="front">
+                                <h3>Projet 1</h3>
+                                <p>Analyse d’un marché cible</p>
+                            </div>
+                            <div class="back">
+                                <h3>Détails</h3>
+                                <p>Étude de la croissance de l'e-sport avec League of Legends</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Projet 2 -->
+                <div class="projet">
+                    <a href="projet2.html">
+                        <div class="inner">
+                            <div class="front">
+                                <h3>Projet 2</h3>
+                                <p>Stratégie de prospection commerciale</p>
+                            </div>
+                            <div class="back">
+                                <h3>Détails</h3>
+                                <p>Plan de prospection pour Valorant auprès des sponsors</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Projet 3 -->
+                <div class="projet">
+                    <a href="projet3.html">
+                        <div class="inner">
+                            <div class="front">
+                                <h3>Projet 3</h3>
+                                <p>Présentation de produit/service</p>
+                            </div>
+                            <div class="back">
+                                <h3>Détails</h3>
+                                <p>Lancement d’une nouvelle skin League of Legends</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Projet 4 -->
+                <div class="projet">
+                    <a href="projet4.html">
+                        <div class="inner">
+                            <div class="front">
+                                <h3>Projet 4</h3>
+                                <p>Étude de cas – Gestion d’un client clé</p>
+                            </div>
+                            <div class="back">
+                                <h3>Détails</h3>
+                                <p>Collaboration avec Netflix pour Arcane</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Projet 5 -->
+                <div class="projet">
+                    <a href="projet5.html">
+                        <div class="inner">
+                            <div class="front">
+                                <h3>Projet 5</h3>
+                                <p>Développement d’une campagne publicitaire</p>
+                            </div>
+                            <div class="back">
+                                <h3>Détails</h3>
+                                <p>Publicité pour Wild Rift sur mobile</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Projet 6 -->
+                <div class="projet">
+                    <a href="projet6.html">
+                        <div class="inner">
+                            <div class="front">
+                                <h3>Projet 6</h3>
+                                <p>Audit d’un processus de vente</p>
+                            </div>
+                            <div class="back">
+                                <h3>Détails</h3>
+                                <p>Audit du système de microtransactions Riot Points</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Contact</h2>
+            <form id="contactForm">
+                <div>
+                    <label for="prenom">Prénom</label>
+                    <input type="text" name="prenom" id="prenom" placeholder="Prénom" required>
+                </div>
+                <div>
+                    <label for="nom">Nom</label>
+                    <input type="text" name="nom" id="nom" placeholder="Nom" required>
+                </div>
+                <div>
+                    <label for="message">Message</label>
+                    <textarea name="message" id="message" rows="5" placeholder="Message" required></textarea>
+                </div>
+                <button type="submit">Envoyer</button>
+                <div id="error-message" ></div>
+                <div id="success-message"></div>
+            </form>
+        </section>
+    </main>
+
+    <footer id="footer">
+        <div class="social-icons">
+            <a href="https://www.facebook.com/profile.php?id=100009827946395" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://x.com/Wolfandal" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.linkedin.com/in/arthur-jumelle-057665223/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+        <p>&copy; 2024 Arthur Jumelle. Tous droits réservés.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
